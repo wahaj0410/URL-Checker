@@ -106,5 +106,5 @@ Wraps check_all_sites() in an infinite loop so it repeats automatically every 30
             print("\nExiting status checker. Goodbye!")
             sys.exit(0)
 
-if __name__ == "__main__":
-    main()  
+    if __name__ == "__main__":
+        main()  
