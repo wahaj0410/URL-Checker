@@ -1,6 +1,7 @@
 import requests 
 import time
 from datetime import datetime
+import sys
 
 LOG_FILE = "status_log.txt"
 
@@ -64,3 +65,17 @@ def check_all_sites():
 
 if __name__ == "__main__":
     check_all_sites()
+
+def main():
+    interval = 30
+    try:
+        while True:
+            check_all_sites()
+            print(f"Waiting {interval} seconds before next check...\n(Press Ctrl+C to stop)")
+            time.sleep(interval)
+    except KeyboardInterrupt:
+        print("\nExiting status checker. Goodbye!")
+        sys.exit(0)
+
+if __name__ == "__main__":
+    main()    
